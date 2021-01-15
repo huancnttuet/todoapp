@@ -1,0 +1,79 @@
+
+$brand-color: #7579e7;
+
+$white: #ffffff;
+$input-gray: #f3f3f4;
+$gray: #757575;
+$black: #000000;
+
+$font-body: "Nunito Sans", sans-serif;
+
+.wrapper {
+	display: flex;
+	width: 100%;
+
+	align-items: center;
+}
+.ab-textinput {
+	position: relative;
+	background-color: $input-gray;
+	font-size: 1rem;
+	color: $black;
+	padding: 10px 12px 6px;
+	height: 25px;
+	border: 2px solid rgba(117, 121, 231, 0);
+	border-radius: 2px;
+	box-shadow: none;
+	outline: none;
+	
+	& + .ab-label {
+		position: absolute;
+		
+		top: 50%;
+		left: 12px;
+		
+		transform: translateY(-50%);
+		
+		font-size: 1rem;
+		color: $gray;
+		
+		font-family: $font-body;
+		
+		transition: all .15s ease;
+	}
+
+	&:hover {
+		box-shadow: 0 0 0 3px rgba($color: #7579e7, $alpha: 0.48);
+		background-color: $white;
+		transition: all 0.25s ease;
+		border: 2px solid rgba(117, 121, 231, 0);
+		
+		& + .ab-label {
+			color: $black;
+		}
+	}
+	
+	&:focus {
+		border: 2px solid rgba(117, 121, 231, 1);
+		background-color: $white;
+		box-shadow: none;
+		
+		& + .ab-label {
+			color: $brand-color;
+			font-weight: 600;
+			font-size: 0.8rem;
+			top: 5px;
+			transform: unset;
+		}
+	}
+	
+	&:not(:placeholder-shown):not(:focus) {
+		& + .ab-label {
+			color: $gray;
+			font-weight: 600;
+			font-size: 0.8rem;
+			top: 5px;
+			transform: unset;
+		}
+	}
+}
